@@ -13,6 +13,9 @@ class Pet(models.Model):
     age = models.IntegerField(null=True)
     vaccinations = models.ManyToManyField('Vaccine', blank=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Vaccine(models.Model):
     name = models.CharField(max_length=50)
